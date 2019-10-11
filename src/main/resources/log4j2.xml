@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Properties>
+		<Property name="log-name">api_via_varejo</Property>
+		<Property name="log-path">logs/</Property>
+	</Properties>
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout>
+				<pattern>%d %p %C{1.} [%t] %m%n</pattern>
+			</PatternLayout>
+		</Console>
+
+		<RollingFile name="RollingFile"
+			fileName="${log-path}${log-name}.log" filePattern="${log-path}${log-name}.%i.log">
+			<PatternLayout>
+				<pattern>%d %p %C{1.} [%t] %m%n</pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20"/>			
+		</RollingFile>
+
+	</Appenders>
+
+	<Loggers>
+		<Root level="debug">
+			<AppenderRef ref="Console" level="info" />
+			<AppenderRef ref="RollingFile" level="info" />
+		</Root>
+	</Loggers>
+
+</Configuration>
