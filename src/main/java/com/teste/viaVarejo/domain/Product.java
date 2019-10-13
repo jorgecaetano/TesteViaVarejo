@@ -5,7 +5,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel(description = "Detalhes sobre a solicitação de parcelamento de pedido.")
+/**
+ * Classe que contém informações dos produtos alvo de solicitação de pagamento
+ * 
+ * @author Jorge Caetano
+ */
+@ApiModel(description = "Produtos alvo da solicitação de parcelamento de pedido.")
 public class Product {
 	
 	@ApiModelProperty(notes = "Código do produto", required = true, example = "123")

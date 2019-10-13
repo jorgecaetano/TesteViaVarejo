@@ -3,6 +3,11 @@ package com.teste.viaVarejo.domain;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+/**
+ * Classe que representa um erro na requisição da API
+ * 
+ * @author Jorge Caetano
+ */
 @ApiModel(description = "Detalhes do erro na requisição.")
 public class RequestError {
 	

@@ -1,5 +1,11 @@
 package com.teste.viaVarejo.exception;
 
+/**
+ * Exception disparado para indicar que o valor do pedido será igual a zero
+ * decorrente da diferença entre o valor do produto e o valor de entrada
+ * 
+ * @author Jorge Caetano
+ */
 public class OrderValueZeroException extends RuntimeException{
 		
 	/**

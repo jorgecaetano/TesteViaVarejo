@@ -18,15 +18,21 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * Classe para configurar a API de documentação Swagger
+ * 
+ * @author Jorge Caetano
+ */
 @Configuration
 @EnableSwagger2
 public class Swagger2Config {
 
+	/**
+	 * Ativar na documentação apenas o status 400 (Bad Request)
+	 */
 	private List<ResponseMessage> responseMessageForPost()
 	{
 	    return new ArrayList<ResponseMessage>() {
-	    	
-
 		{	        
 	        add(new ResponseMessageBuilder()
 	            .code(400)

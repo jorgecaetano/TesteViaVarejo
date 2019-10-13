@@ -20,24 +20,28 @@ import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
+/**
+ * Classe que representa o recurso REST para processar a solicitação de parcelamento/pagamento de pedido
+ * @author Jorge Caetano
+ */
 @RestController
 @RequestMapping(value = "/api/order")
 @Api(value="Recurso para processamento de pagamentos")
 public class OrderResource {
 	
 	@Autowired
-	private OrderService service;	
+	private OrderService orderService;	
 	
 	@ApiOperation(value = "Executa o processamento de pagamento em parcelas", response = Parcel.class, responseContainer = "List")
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "Sucesso no processamento de parcelas"),
 		    @ApiResponse(code = 400, message = "Dados de processamento de parcelas incorretos", response = RequestError.class)		    		    
 		})
-	@PostMapping
+	@PostMapping(produces = "application/json")
 	public ResponseEntity<List<Parcel>> processOrder(
 			@ApiParam(value = "Objeto de processamento de pagamento em parcelas", required = true) @RequestBody Order order) {
 		
-		List<Parcel> parcels = this.service.process(order);
+		List<Parcel> parcels = this.orderService.process(order);
 		return ResponseEntity.ok().body(parcels);
 	}
 

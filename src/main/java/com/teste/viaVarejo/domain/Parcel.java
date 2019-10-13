@@ -8,6 +8,11 @@ import io.swagger.annotations.ApiModelProperty;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Classe que representa itens de parcelamento
+ * 
+ * @author Jorge Caetano
+ */
 @ApiModel(description = "Item do parcelamento do pedido.")
 public class Parcel {
 	
@@ -27,6 +32,12 @@ public class Parcel {
 	public Parcel(Integer parcelNumber, Float value) {
 		this.parcelNumber = parcelNumber;
 		this.value = value;		
+	}
+	
+	public Parcel(Integer parcelNumber, Float value, Float monthRate) {
+		this.parcelNumber = parcelNumber;
+		this.value = value;		
+		this.monthRate = monthRate;
 	}
 
 	public Integer getParcelNumber() {

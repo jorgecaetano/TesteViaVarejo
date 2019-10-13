@@ -1,5 +1,10 @@
 package com.teste.viaVarejo.exception;
 
+/**
+ * Exception disparado para indicar dados de requisição inválidos
+ * 
+ * @author Jorge Caetano
+ */
 public class InvalidOrderRequestException extends RuntimeException{
 	
 	/**

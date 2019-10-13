@@ -5,6 +5,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+/**
+ * Classe que contém informações de condição de pagamento do pedido
+ * 
+ * @author Jorge Caetano
+ */
 @ApiModel(description = "Detalhes sobre a condição de pagamento do pedido.")
 public class PaymentCondition {
 	 
