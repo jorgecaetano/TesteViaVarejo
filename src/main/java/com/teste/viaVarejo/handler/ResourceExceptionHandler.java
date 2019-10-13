@@ -33,6 +33,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.google.gson.Gson;
 import com.teste.viaVarejo.domain.RequestError;
 import com.teste.viaVarejo.exception.InvalidOrderRequestException;
+import com.teste.viaVarejo.exception.OrderValueZeroException;
 
 /**
  * Classe para interceptar e tratar todas as exceções lançadas a partir da
@@ -72,6 +73,15 @@ public class ResourceExceptionHandler extends ResponseEntityExceptionHandler {
 		return requestError;
 	}
 
+	@ExceptionHandler(OrderValueZeroException.class)
+	public ResponseEntity<RequestError> handleOrderValueZeroException(
+			OrderValueZeroException ex, HttpServletRequest request) {
+		HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
+
+		RequestError requestError = this.buildRequestError(ex.getMessage(), httpStatus, request.getRequestURI());
+		return ResponseEntity.status(httpStatus).body(requestError);
+	}
+	
 	@ExceptionHandler(InvalidOrderRequestException.class)
 	public ResponseEntity<RequestError> handleInvalidOrderRequestException(
 			InvalidOrderRequestException ex, HttpServletRequest request) {
