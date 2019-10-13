@@ -26,14 +26,14 @@ Por exemplo:
 ```json
 {
 "condicaoPagamento": {
-		"qtdeParcelas": integer // Quantidade de parcelas,
-		"valorEntrada": float // Valor de entrada
+		"qtdeParcelas": "integer // Quantidade de parcelas",
+		"valorEntrada": "float // Valor de entrada"
 		
 	},
 	"produto": {
-		"codigo": integer // Código do produto,
-		"valor": float // Valor do produto,
-		"nome": "string" // Nome do produto
+		"codigo": "integer // Código do produto",
+		"valor": "float // Valor do produto",
+		"nome": "string // Nome do produto"
 	}
 }
 ```
@@ -58,8 +58,8 @@ Por exemplo:
 ```json
 [
     {
-        "numeroParcela": integer // Número da parcela,
-        "valor": float // Valor da parcela
+        "numeroParcela": "integer // Número da parcela",
+        "valor": "float // Valor da parcela"
     },
     ...
 ]
@@ -95,9 +95,9 @@ Por exemplo:
 ```json
 [
     {
-        "numeroParcela": integer // Número da parcela,
-        "valor": float // Valor da parcela,
-        "taxaJurosAoMes": float // Taxa de juros mensal considerada
+        "numeroParcela": "integer // Número da parcela",
+        "valor": "float // Valor da parcela",
+        "taxaJurosAoMes": "float // Taxa de juros mensal considerada"
     },
     ...
 ]
@@ -142,11 +142,11 @@ Por exemplo:
 **Json de retorno da API para o status HTTP de erro (maior ou igual a 400 ) com parcelas maior ou igual a 6:**
 ```json
 {
-    "timestamp": integer // Data e hora do erro no formato UNIX,
-    "status": integer // Status HTTP,
-    "error": "string" // Tipo do erro HTTP,
-    "message": "string" // Detalhe da mensagem do erro,
-    "path": "string" // Caminho do recurso que gerou o erro
+    "timestamp": "integer // Data e hora do erro no formato UNIX",
+    "status": "integer // Status HTTP",
+    "error": "string // Tipo do erro HTTP",
+    "message": "string // Detalhe da mensagem do erro",
+    "path": "string // Caminho do recurso que gerou o erro"
 }
 ```
 
