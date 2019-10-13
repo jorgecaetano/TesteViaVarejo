@@ -61,7 +61,6 @@ Por exemplo:
         "numeroParcela": "integer // Número da parcela",
         "valor": "float // Valor da parcela"
     },
-    ...
 ]
 ```
 
@@ -99,7 +98,6 @@ Por exemplo:
         "valor": "float // Valor da parcela",
         "taxaJurosAoMes": "float // Taxa de juros mensal considerada"
     },
-    ...
 ]
 ```
 
@@ -160,5 +158,13 @@ Por exemplo:
     "path": "/via_varejo/api/order"
 }
 ```
+
+URL completa para documentação Swagger
+
+    http://<HOST>:<PORTA>/via_varejo/swagger-ui.html
+
+Por exemplo:
+
+    http://127.0.0.1:8080/via_varejo/swagger-ui.html
 
 
